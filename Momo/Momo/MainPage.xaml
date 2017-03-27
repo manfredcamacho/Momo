@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:Momo"
              x:Class="Momo.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+	<Button Text="Boton"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
 </ContentPage>
