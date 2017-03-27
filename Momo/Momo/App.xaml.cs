@@ -13,7 +13,7 @@ namespace Momo
         {
             InitializeComponent();
 
-            MainPage = new Momo.MainPage();
+            MainPage = new NavigationPage(new Momo.Pages.MainPage())  ;
         }
 
         protected override void OnStart()

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momo.Pages.PreguntaPage"
+             BackgroundImage="background.jpg">
+    <StackLayout Spacing="0" >
+        <Image x:Name="imagen_img" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+        <Label x:Name="pista_lbl" IsVisible="true" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+        <!--<SwitchCell x:Name="pista_swch" Text="Mostrar pista" On="False" OnChanged="pista_swch_OnChanged"></SwitchCell>-->
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ListView x:Name="opciones_lst"  VerticalOptions="End" ItemSelected="opciones_lst_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Button  FontSize="Large" Text="{Binding Nombre}" BackgroundColor="#FFC400" TextColor="White"  HorizontalOptions="Center"  VerticalOptions="Center" WidthRequest="200" HeightRequest="50" ></Button>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

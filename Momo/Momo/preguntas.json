@@ -1,0 +1,110 @@
+{
+  "preguntas":
+  [
+    {
+      "imagen" : "https://publicdomainvectors.org/photos/lemmling_Cartoon_dog.png",
+      "respuesta": {
+        "esp": "Perro",
+        "ing": "Dog"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/83479/14thWarrior-Cartoon-Elephant.png",
+      "respuesta": {
+        "esp": "Elefante",
+        "ing": "Elephant"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/69823/cartoon-frog.png",
+      "respuesta": {
+        "esp": "Rana",
+        "ing": "Frog"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/69817/cartoon-bee.png",
+      "respuesta": {
+        "esp": "Abeja",
+        "ing": "Bee"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/22293/StudioFibonacci-Cartoon-rhino.png",
+      "respuesta": {
+        "esp": "Rinoceronte",
+        "ing": "Rhino"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/22343/StudioFibonacci-Cartoon-leopard.png",
+      "respuesta": {
+        "esp": "Leopardo",
+        "ing": "Leopard"
+      }
+    },
+      {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/22293/StudioFibonacci-Cartoon-rhino.png",
+      "respuesta": {
+        "esp": "Rinoceronte",
+        "ing": "Rhino"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/222386/Cartoon-Zebra.png",
+      "respuesta": {
+        "esp": "Cebra",
+        "ing": "Zebra"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/22337/StudioFibonacci-Cartoon-hippo.png",
+      "respuesta": {
+        "esp": "Hipopótamo",
+        "ing": "Hippo"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/17824/lemmling-Cartoon-goat.png",
+      "respuesta": {
+        "esp": "Cabra",
+        "ing": "Goat"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/17635/lemmling-Cartoon-elk.png",
+      "respuesta": {
+        "esp": "Alce",
+        "ing": "Elk"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/17566/lemmling-Cartoon-owl.png",
+      "respuesta": {
+        "esp": "Búho",
+        "ing": "Owl"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/17676/lemmling-Cartoon-cow.png",
+      "respuesta": {
+        "esp": "Vaca",
+        "ing": "Cow"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/17628/lemmling-Cartoon-giraffe.png",
+      "respuesta": {
+        "esp": "Jirafa",
+        "ing": "Giraffe"
+      }
+    },
+    {
+      "imagen" : "https://openclipart.org/image/2400px/svg_to_png/17637/lemmling-Cartoon-sheep.png",
+      "respuesta": {
+        "esp": "Oveja",
+        "ing": "Sheep"
+      }
+    }
+  ]
+}

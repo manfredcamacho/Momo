@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace Momo
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace Momo.Pages
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Incorrecto : ContentPage
     {
-        public MainPage()
+        public Incorrecto()
         {
             InitializeComponent();
         }
