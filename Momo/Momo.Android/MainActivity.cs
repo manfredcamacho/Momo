@@ -20,6 +20,16 @@ namespace Momo.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            /* Statusbar transparente y agregar la imagen de fondo en toda la pantalla */
+            Window.AddFlags(WindowManagerFlags.TranslucentNavigation);
+            Window.SetBackgroundDrawableResource(Resource.Drawable.background);
+            SetStatusBarColor(Android.Graphics.Color.Transparent);
+            //Para que la statusbar tenga una opacidad se agrega esta linea a styles.xml
+            //<item name="android:windowTranslucentStatus">true</item>
+
+            /* END statusbar */
+
             LoadApplication(new App());
         }
     }

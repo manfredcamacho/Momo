@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Momo"
-             x:Class="Momo.Pages.MainPage"
-             BackgroundImage="background.jpg">
+             x:Class="Momo.Pages.MainPage">
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="x:String" WinPhone="background.jpg" />
+    </ContentPage.BackgroundImage>
     <StackLayout Spacing="0" >
         <Image Source="logo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

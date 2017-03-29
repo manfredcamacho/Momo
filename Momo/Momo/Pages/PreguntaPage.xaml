@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Momo.Pages.PreguntaPage"
-             BackgroundImage="background.jpg">
+             x:Class="Momo.Pages.PreguntaPage">
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="x:String" WinPhone="background.jpg" />
+    </ContentPage.BackgroundImage>
     <StackLayout Spacing="0" >
         <Image x:Name="imagen_img" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
         <Label x:Name="pista_lbl" IsVisible="true" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"></Label>
