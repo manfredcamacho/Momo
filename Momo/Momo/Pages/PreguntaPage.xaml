@@ -6,20 +6,37 @@
         <OnPlatform x:TypeArguments="x:String" WinPhone="background.jpg" />
     </ContentPage.BackgroundImage>
     <StackLayout Spacing="0" >
-        <Image x:Name="imagen_img" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
-        <Label x:Name="pista_lbl" IsVisible="true" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-        <!--<SwitchCell x:Name="pista_swch" Text="Mostrar pista" On="False" OnChanged="pista_swch_OnChanged"></SwitchCell>-->
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <ListView x:Name="opciones_lst"  VerticalOptions="End" ItemSelected="opciones_lst_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Button  FontSize="Large" Text="{Binding Nombre}" BackgroundColor="#FFC400" TextColor="White"  HorizontalOptions="Center"  VerticalOptions="Center" WidthRequest="200" HeightRequest="50" ></Button>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+        <Frame OutlineColor="Transparent" HeightRequest="50" HasShadow="False" BackgroundColor="Transparent" Padding="0" Margin="0">
+            <Label x:Name="pista_lbl" IsVisible="False" BackgroundColor="#FFC400" Opacity="0.9" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand"></Label>
+        </Frame>
+        <Image x:Name="imagen_img" Margin="10" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+        <StackLayout Padding="20" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="Center">
+            <Label Text="Pista" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
+            <Switch x:Name="pista_swch" IsToggled="False" Toggled="pista_swch_Toggled"></Switch>            
         </StackLayout>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"></Grid>
+            <Grid Grid.Column="1">
+                <ListView x:Name="opciones_lst"  SeparatorVisibility="None"   ItemSelected="opciones_lst_ItemSelected" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell >
+                                <StackLayout Padding="7,0,7,0">
+                                    <Label HorizontalTextAlignment = "Center" VerticalOptions="CenterAndExpand" FontSize="Large" Text="{Binding Nombre}" BackgroundColor="#FFC400" TextColor="White" ></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid Grid.Column="2"></Grid>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

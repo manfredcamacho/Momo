@@ -29,13 +29,9 @@ namespace Momo.Pages
             opciones.Add(Respuesta);
 
             opciones_lst.ItemsSource = opciones;
-            imagen_img.Source = Imagen;
-            pista_lbl.Text = Pista;
-        }
 
-        private void pista_swch_OnChanged(object sender, ToggledEventArgs e)
-        {
-            pista_lbl.IsVisible = e.Value;
+            pista_lbl.Text = Pista;
+            imagen_img.Source = Imagen;
         }
 
         private void opciones_lst_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -43,6 +39,10 @@ namespace Momo.Pages
             DisplayAlert("MSG", ((Opcion)e.SelectedItem).Nombre, "OK");
         }
 
+        private void pista_swch_Toggled(object sender, ToggledEventArgs e)
+        {
+            pista_lbl.IsVisible = e.Value;
+        }
     }
 
     public class Opcion
