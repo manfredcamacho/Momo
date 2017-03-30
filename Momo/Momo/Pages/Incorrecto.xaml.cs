@@ -14,7 +14,13 @@ namespace Momo.Pages
     {
         public Incorrecto()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+        }
+
+        public void OnTapped(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
         }
     }
 }

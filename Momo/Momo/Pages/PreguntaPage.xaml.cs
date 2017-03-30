@@ -20,12 +20,12 @@ namespace Momo.Pages
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             Pista= "Cabra";
-            Respuesta = new Opcion { Nombre = "Goat" };
+            Respuesta = new Opcion { Nombre = "Goat", Valida = true };
             Imagen = "https://openclipart.org/image/2400px/svg_to_png/17824/lemmling-Cartoon-goat.png";
             List<Opcion> opciones = new List<Opcion>();
-            opciones.Add(new Opcion{ Nombre = "Dog"});
-            opciones.Add(new Opcion { Nombre = "Rhino" });
-            opciones.Add(new Opcion { Nombre = "Frog" });
+            opciones.Add(new Opcion{ Nombre = "Dog", Valida = false});
+            opciones.Add(new Opcion { Nombre = "Rhino" , Valida = false});
+            opciones.Add(new Opcion { Nombre = "Frog", Valida = false });
             opciones.Add(Respuesta);
 
             opciones_lst.ItemsSource = opciones;
@@ -36,7 +36,14 @@ namespace Momo.Pages
 
         private void opciones_lst_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            DisplayAlert("MSG", ((Opcion)e.SelectedItem).Nombre, "OK");
+            if (((Opcion)e.SelectedItem).Valida)
+            {
+                Navigation.PushAsync(new Correcto());
+            }
+            else
+            {
+                Navigation.PushAsync(new Incorrecto());
+            }
         }
 
         private void pista_swch_Toggled(object sender, ToggledEventArgs e)
@@ -48,5 +55,6 @@ namespace Momo.Pages
     public class Opcion
     {
         public string Nombre { get; set; }
+        public Boolean Valida { get; set; }
     }
 }
