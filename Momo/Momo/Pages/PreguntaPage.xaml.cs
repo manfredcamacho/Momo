@@ -34,6 +34,7 @@ namespace Momo.Pages
                 {
                     Navigation.PushAsync(new Correcto());
                     pregunta.cambiarPregunta(numeroPregunta);
+                    pista_swch.IsToggled = false;
                 }
                 else
                 {

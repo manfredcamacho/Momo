@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Momo.Models;
 using System.Reflection;
-using Java.Util;
 using System;
-using System.Linq;
 
 namespace Momo.Tools
 {
@@ -13,6 +11,8 @@ namespace Momo.Tools
     {
         private static List<ImagenModel> listaImagenes;        
         private static List<PreguntaModel> listaPreguntas;
+        private static Java.Util.Random randomGen = new Java.Util.Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
+
 
         public  static void cargarDatosJson()
         {
@@ -33,6 +33,8 @@ namespace Momo.Tools
                 listaOpciones = getOpciones(imagen);
                 listaPreguntas.Add( new PreguntaModel(imagen, listaOpciones));
             }
+
+            listaPreguntas.Shuffle();
         }
 
         public static PreguntaModel getPregunta(int numeroPregunta)
@@ -57,7 +59,6 @@ namespace Momo.Tools
         //Devuelvo las opciones para una imagen, incluyendo la respuesta correcta
         private static List<OpcionModel> getOpciones(ImagenModel imagen)
         {
-            Java.Util.Random randomGen = new Java.Util.Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
             List<int> listaNumeros = new List<int>();
             List<OpcionModel> listaOpciones = new List<OpcionModel>();
             
@@ -104,10 +105,23 @@ namespace Momo.Tools
                 opcionValida = false;
             }
 
+            listaOpciones.Shuffle();
+
             return listaOpciones;
         }
 
-        
-        
+        private static void Shuffle<T>(this IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = randomGen.NextInt(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
     }
 }

@@ -104,7 +104,6 @@ namespace Momo.ViewModels
         {
             if (PropertyChanged != null)
             {
-                Debug.WriteLine("-------------------------------------------Cambio: " + propertyName);
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
