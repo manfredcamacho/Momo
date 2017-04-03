@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Momo.Pages.PreguntaPage">
+             x:Class="Momo.Pages.PreguntaPage"
+             xmlns:converter="clr-namespace:Momo.Converters">
     <ContentPage.BackgroundImage>
         <OnPlatform x:TypeArguments="x:String" WinPhone="background.jpg" />
     </ContentPage.BackgroundImage>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:OpcionConverter x:Key="OpcionConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <StackLayout Spacing="0" >
         <Frame OutlineColor="Transparent" HeightRequest="50" HasShadow="False" BackgroundColor="Transparent" Padding="0" Margin="0">
-            <Label x:Name="pista_lbl" IsVisible="False" BackgroundColor="#FFC400" Opacity="0.9" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand"></Label>
+            <Label x:Name="pista_lbl" Text="{Binding Pista}" IsVisible="False" BackgroundColor="#FFC400" Opacity="0.9" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand"></Label>
         </Frame>
-        <Image x:Name="imagen_img" Margin="10" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+        <Image x:Name="imagen_img" Margin="10"  Source="{Binding Imagen}" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
         <StackLayout Padding="20" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="Center">
             <Label Text="Pista" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
             <Switch x:Name="pista_swch" IsToggled="False" Toggled="pista_swch_Toggled"></Switch>            
@@ -23,12 +30,12 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0"></Grid>
             <Grid Grid.Column="1">
-                <ListView x:Name="opciones_lst"  SeparatorVisibility="None"   ItemSelected="opciones_lst_ItemSelected" >
+                <ListView x:Name="opciones_lst"  ItemsSource="{Binding ListaOpciones}" SeparatorVisibility="None"   ItemSelected="opciones_lst_ItemSelected" >
                     <ListView.ItemTemplate >
                         <DataTemplate >
                             <ViewCell >
                                 <StackLayout Padding="7,0,7,0">
-                                    <Label HorizontalTextAlignment = "Center" VerticalOptions="CenterAndExpand" FontSize="Large" Text="{Binding Nombre}" BackgroundColor="#FFC400" TextColor="White" ></Label>
+                                    <Label HorizontalTextAlignment = "Center" VerticalOptions="CenterAndExpand" FontSize="Large" Text="{Binding Contenido, Converter={StaticResource Key=OpcionConverter}}" BackgroundColor="#FFC400" TextColor="White" ></Label>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

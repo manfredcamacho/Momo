@@ -10,10 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Momo.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Correcto : ContentPage
+    public partial class GameOver : ContentPage
     {
-
-        public Correcto()
+        public GameOver()
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
@@ -21,7 +20,7 @@ namespace Momo.Pages
 
         public void OnTapped(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+            Navigation.PopToRootAsync();
         }
     }
 }

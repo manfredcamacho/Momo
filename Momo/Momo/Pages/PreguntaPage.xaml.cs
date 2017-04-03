@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Momo.Models;
+using Momo.Tools;
+using Momo.ViewModels;
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,34 +10,36 @@ namespace Momo.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PreguntaPage : ContentPage
     {
-        Opcion Respuesta { get; set; }  
-        string Pista { get; set; }
-        string Imagen { get; set; }
+        Idiomas Idioma { get; set; }
+        PreguntaViewModel pregunta;
+        static int numeroPregunta;
 
-        public PreguntaPage()
+        public PreguntaPage(Idiomas idioma)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
-            Pista= "Cabra";
-            Respuesta = new Opcion { Nombre = "Goat", Valida = true };
-            Imagen = "https://openclipart.org/image/2400px/svg_to_png/17824/lemmling-Cartoon-goat.png";
-            List<Opcion> opciones = new List<Opcion>();
-            opciones.Add(new Opcion{ Nombre = "Dog", Valida = false});
-            opciones.Add(new Opcion { Nombre = "Rhino" , Valida = false});
-            opciones.Add(new Opcion { Nombre = "Frog", Valida = false });
-            opciones.Add(Respuesta);
-
-            opciones_lst.ItemsSource = opciones;
-
-            pista_lbl.Text = Pista;
-            imagen_img.Source = Imagen;
+            numeroPregunta = 1;
+            this.Idioma = idioma;
+            pregunta = new PreguntaViewModel(idioma);
+            this.BindingContext = pregunta;            
         }
 
         private void opciones_lst_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (((Opcion)e.SelectedItem).Valida)
+            
+            if (((OpcionModel)e.SelectedItem).Valida)
             {
-                Navigation.PushAsync(new Correcto());
+                numeroPregunta++;
+                if (pregunta.existePregunta(numeroPregunta))
+                {
+                    Navigation.PushAsync(new Correcto());
+                    pregunta.cambiarPregunta(numeroPregunta);
+                }
+                else
+                {
+                    Navigation.PushAsync(new GameOver());
+                }
+                
             }
             else
             {
@@ -50,11 +51,10 @@ namespace Momo.Pages
         {
             pista_lbl.IsVisible = e.Value;
         }
-    }
 
-    public class Opcion
-    {
-        public string Nombre { get; set; }
-        public Boolean Valida { get; set; }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
     }
 }
