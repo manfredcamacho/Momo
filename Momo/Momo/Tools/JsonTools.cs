@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Momo.Models;
 using System.Reflection;
 using System;
+using System.Diagnostics;
 
 namespace Momo.Tools
 {
@@ -11,7 +12,7 @@ namespace Momo.Tools
     {
         private static List<ImagenModel> listaImagenes;        
         private static List<PreguntaModel> listaPreguntas;
-        private static Java.Util.Random randomGen = new Java.Util.Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
+        private static Random randomGen = new Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
 
 
         public  static void cargarDatosJson()
@@ -23,8 +24,9 @@ namespace Momo.Tools
             {
                 json = reader.ReadToEnd();
             }
-
+            
             listaImagenes = JsonConvert.DeserializeObject<List<ImagenModel>>(json);
+            
             List<OpcionModel> listaOpciones;
 
             listaPreguntas = new List<PreguntaModel>();
@@ -63,7 +65,7 @@ namespace Momo.Tools
             List<OpcionModel> listaOpciones = new List<OpcionModel>();
             
             //Genero un numero entre 1 y N (cantidad de imagenes)
-            int numero = randomGen.NextInt(listaImagenes.Count) + 1 ;
+            int numero = randomGen.Next(listaImagenes.Count) + 1 ;
             bool numeroRepetido = false;
 
             listaNumeros.Add(imagen.Id);
@@ -86,7 +88,7 @@ namespace Momo.Tools
                 {
                     listaNumeros.Add(numero);
                 }
-                numero = randomGen.NextInt(listaImagenes.Count) + 1;
+                numero = randomGen.Next(listaImagenes.Count) + 1;
                 numeroRepetido = false;
             }
 
@@ -116,7 +118,7 @@ namespace Momo.Tools
             while (n > 1)
             {
                 n--;
-                int k = randomGen.NextInt(n + 1);
+                int k = randomGen.Next(n + 1);
                 T value = list[k];
                 list[k] = list[n];
                 list[n] = value;
