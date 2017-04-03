@@ -21,10 +21,12 @@ namespace Momo.ViewModels
             JsonTools.cargarDatosJson();
             preguntaActual = 1;
             pregunta = JsonTools.getPregunta(preguntaActual);
-            Pista = pregunta.Imagen.Nombre[idioma];
+
+            Idioma = idioma;
+            Pista = pregunta.Imagen.Nombre[setIdiomaPista(Idioma)];
             Imagen = pregunta.Imagen.Url;
             ListaOpciones = pregunta.ListaOpciones;            
-            Idioma = idioma;
+            
         }
 
         public bool existePregunta(int numeroPregunta)
@@ -39,9 +41,17 @@ namespace Momo.ViewModels
         {
             //getPregunta verifica si numeroPregunta es correcto
             pregunta = JsonTools.getPregunta(numeroPregunta);
-            Pista = pregunta.Imagen.Nombre[Idioma];
+            Pista = pregunta.Imagen.Nombre[setIdiomaPista(Idioma)];
             Imagen = pregunta.Imagen.Url;
             ListaOpciones = pregunta.ListaOpciones;
+        }
+
+        private Idiomas setIdiomaPista(Idiomas idioma)
+        {
+            if (idioma == Idiomas.esp)
+                return Idiomas.ing;
+            else
+                return Idiomas.esp;
         }
 
         private Idiomas _idioma;

@@ -10,7 +10,7 @@ namespace Momo.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PreguntaPage : ContentPage
     {
-        Idiomas Idioma { get; set; }
+        public static Idiomas Idioma { get; set; }
         PreguntaViewModel pregunta;
         static int numeroPregunta;
 
@@ -19,9 +19,14 @@ namespace Momo.Pages
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             numeroPregunta = 1;
-            this.Idioma = idioma;
+            Idioma = idioma;
             pregunta = new PreguntaViewModel(idioma);
-            this.BindingContext = pregunta;            
+            this.BindingContext = pregunta;
+
+            if (idioma == Idiomas.esp)
+                pista_title_swch.Text = "Pista";
+            else
+                pista_title_swch.Text = "Tip";
         }
 
         private void opciones_lst_ItemSelected(object sender, SelectedItemChangedEventArgs e)

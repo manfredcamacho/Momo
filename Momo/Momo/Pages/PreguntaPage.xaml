@@ -18,7 +18,7 @@
         </Frame>
         <Image x:Name="imagen_img" Margin="10"  Source="{Binding Imagen}" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
         <StackLayout Padding="20" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="Center">
-            <Label Text="Pista" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
+            <Label x:Name="pista_title_swch" Text="Pista" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
             <Switch x:Name="pista_swch" IsToggled="False" Toggled="pista_swch_Toggled"></Switch>            
         </StackLayout>
         
