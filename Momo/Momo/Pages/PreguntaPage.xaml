@@ -16,7 +16,9 @@
         <Frame OutlineColor="Transparent" HeightRequest="50" HasShadow="False" BackgroundColor="Transparent" Padding="0" Margin="0">
             <Label x:Name="pista_lbl" Text="{Binding Pista}" IsVisible="False" BackgroundColor="#FFC400" Opacity="0.9" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand"></Label>
         </Frame>
-        <Image x:Name="imagen_img" Margin="10"  Source="{Binding Imagen}" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+        <StackLayout HorizontalOptions="Center">
+            <Image x:Name="imagen_img" Margin="10"  Source="{Binding Imagen}" WidthRequest="200" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>            
+        </StackLayout>        
         <StackLayout Padding="20" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="Center">
             <Label x:Name="pista_title_swch" Text="Pista" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
             <Switch x:Name="pista_swch" IsToggled="False" Toggled="pista_swch_Toggled"></Switch>            
@@ -34,7 +36,17 @@
                     <ListView.ItemTemplate >
                         <DataTemplate >
                             <ViewCell >
-                                <StackLayout Padding="7,0,7,0">
+                                <StackLayout>
+                                    <StackLayout.Padding>
+                                        <OnPlatform x:TypeArguments="Thickness">
+                                            <OnPlatform.Android>
+                                                5,0,5,0
+                                            </OnPlatform.Android>
+                                            <OnPlatform.WinPhone>
+                                                10,10,10,10
+                                            </OnPlatform.WinPhone>
+                                        </OnPlatform>
+                                    </StackLayout.Padding>
                                     <Label HorizontalTextAlignment = "Center" VerticalOptions="CenterAndExpand" FontSize="Large" Text="{Binding Contenido, Converter={StaticResource Key=OpcionConverter}}" BackgroundColor="#FFC400" TextColor="White" ></Label>
                                 </StackLayout>
                             </ViewCell>

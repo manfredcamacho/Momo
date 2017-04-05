@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Momo.Pages.GameOver">
-    <StackLayout >
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="x:String" WinPhone="background.jpg" />
+    </ContentPage.BackgroundImage>
+    <StackLayout BackgroundColor="Transparent">
         <StackLayout.GestureRecognizers>
             <TapGestureRecognizer Tapped="OnTapped" NumberOfTapsRequired="1"/>
         </StackLayout.GestureRecognizers>
-        <Label Text="¡¡¡JUEGO TERMINADO!!!" FontSize="Large" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  TextColor="Orange"></Label>
+        <Label  x:Name="msg" Text="¡¡¡JUEGO TERMINADO!!!" FontSize="Large" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  TextColor="Orange"></Label>
     </StackLayout>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Momo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace Momo.Pages
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            if (PreguntaPage.Idioma == Idiomas.ing)
+            {
+                msg.Text = "GAME OVER";
+            }
         }
 
         public void OnTapped(object sender, EventArgs e)
