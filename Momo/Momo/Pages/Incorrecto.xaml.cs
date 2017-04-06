@@ -17,12 +17,23 @@ namespace Momo.Pages
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+        
             if (PreguntaPage.Idioma == Idiomas.ing)
             {
                 msg.Text = "¡¡¡TRY AGAIN!!!";
             }
         }
-
+        protected async override void OnAppearing()
+        {
+            await msg.TranslateTo(2.5, 0, 50, Easing.Linear);
+            await msg.TranslateTo(-2.5, 0, 50, Easing.Linear);
+            await msg.TranslateTo(2.5, 0, 50, Easing.Linear);
+            await msg.TranslateTo(-2.5, 0, 50, Easing.Linear);
+            await msg.TranslateTo(2.5, 0, 50, Easing.Linear);
+            await msg.TranslateTo(-2.5, 0, 50, Easing.Linear);
+            await msg.TranslateTo(0, 0, 50, Easing.Linear);
+            await msg.ScaleTo(2, 2000, Easing.CubicInOut);
+        }
         public void OnTapped(object sender, EventArgs e)
         {
             Navigation.PopAsync();

@@ -18,6 +18,8 @@ namespace Momo.Pages
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            msg.RotateTo(1080, 1500, Easing.CubicInOut);
+            msg.ScaleTo(2, 3000, Easing.BounceOut);
             if (PreguntaPage.Idioma == Idiomas.ing)
             {
                 msg.Text = "CORRECT!!!";

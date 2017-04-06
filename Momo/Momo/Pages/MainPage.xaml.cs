@@ -16,8 +16,17 @@ namespace Momo.Pages
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            logo.ScaleTo(2, 3000, Easing.BounceOut);
+            esp_btn.TranslateTo(0, 25, 3000, Easing.BounceOut);
+            eng_btn.TranslateTo(0, 50, 3000, Easing.BounceOut);
         }
-
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            await label.RotateTo(10, 1000, Easing.BounceOut);
+            await label.RotateTo(-10, 1000, Easing.BounceOut);
+            await label.RotateTo(0, 1000, Easing.BounceOut);
+        }
         private void esp_btn_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PreguntaPage(Idiomas.esp));

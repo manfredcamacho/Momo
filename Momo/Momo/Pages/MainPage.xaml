@@ -7,9 +7,9 @@
         <OnPlatform x:TypeArguments="x:String" WinPhone="background.jpg" />
     </ContentPage.BackgroundImage>
     <StackLayout Spacing="0" >
-        <Image Source="logo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+        <Image x:Name="logo" Source="logo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Label  Text="Seleccione el idioma" FontSize="Large" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+            <Label  x:Name="label" Text="Seleccione el idioma" FontSize="Large" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"></Label>
             <Button x:Name="esp_btn"  Text="Español" BackgroundColor="#FFC400" FontSize="Large" WidthRequest="300"  TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="esp_btn_Clicked"></Button>
             <Button x:Name="eng_btn" Text="Ingles" BackgroundColor="#FFC400" FontSize="Large" WidthRequest="300" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="eng_btn_Clicked"></Button>
         </StackLayout>

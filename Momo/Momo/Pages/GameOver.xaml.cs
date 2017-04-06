@@ -17,6 +17,8 @@ namespace Momo.Pages
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            msg.ScaleTo(2, 5000, Easing.BounceIn);
+            msg.FadeTo(1, 5000, Easing.BounceOut);
             if (PreguntaPage.Idioma == Idiomas.ing)
             {
                 msg.Text = "GAME OVER";
