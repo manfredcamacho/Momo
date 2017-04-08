@@ -89,7 +89,7 @@
   },
   {
     "id": 12,
-    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17566/lemmling-Cartoon-owl.png",
+    "imagen": 	"https://openclipart.org/image/2400px/svg_to_png/17566/lemmling-Cartoon-owl.png",
     "respuesta": {
       "esp": "Búho",
       "ing": "Owl"
@@ -109,6 +109,134 @@
     "respuesta": {
       "esp": "Jirafa",
       "ing": "Giraffe"
+    }
+  },
+  {
+    "id": 15,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/27563/lemmling-Little-penguin-5.png",
+    "respuesta": {
+      "esp": "Pingüino",
+      "ing": "Penguin"
+    }
+  },
+  {
+    "id": 16,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17814/lemmling-Cartoon-beaver.png",
+    "respuesta": {
+      "esp": "Castor",
+      "ing": "Beaver"
+    }
+  },
+  {
+    "id": 17,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17683/lemmling-Cartoon-cat.png",
+    "respuesta": {
+      "esp": "Gato",
+      "ing": "Cat"
+    }
+  },
+  {
+    "id": 18,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/18925/lemmling-Small-whale.png",
+    "respuesta": {
+      "esp": "Ballena",
+      "ing": "Whale"
+    }
+  },
+  {
+    "id": 19,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17592/lemmling-Cartoon-turtle.png",
+    "respuesta": {
+      "esp": "Tortuga",
+      "ing": "Turtle"
+    }
+  },
+  {
+    "id": 20,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17558/lemmling-Simple-cartoon-mouse.png",
+    "respuesta": {
+      "esp": "Ratón",
+      "ing": "Mouse"
+    }
+  },
+  {
+    "id": 21,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17702/lemmling-Cartoon-bear.png",
+    "respuesta": {
+      "esp": "Oso",
+      "ing": "Bear"
+    }
+  },
+  {
+    "id": 22,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17575/lemmling-Cartoon-kangaroo.png",
+    "respuesta": {
+      "esp": "Canguro",
+      "ing": "Kangaroo"
+    }
+  },
+  {
+    "id": 23,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/169963/lemmling-Cartoon-walrus.png",
+    "respuesta": {
+      "esp": "Foca",
+      "ing": "Walrus"
+    }
+  },
+  {
+    "id": 24,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/23052/StudioFibonacci-Cartoon-bunny.png",
+    "respuesta": {
+      "esp": "Conejo",
+      "ing": "Bunny"
+    }
+  },
+  {
+    "id": 25,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/22284/cartoon-lion.png",
+    "respuesta": {
+      "esp": "León",
+      "ing": "Lion"
+    }
+  },
+  {
+    "id": 26,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17595/lemmling-Cartoon-squirrel.png",
+    "respuesta": {
+      "esp": "Ardilla",
+      "ing": "Squirrel"
+    }
+  },
+  {
+    "id": 27,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/17678/lemmling-Ladybug.png",
+    "respuesta": {
+      "esp": "Vaquita de san Antonio",
+      "ing": "Ladybug"
+    }
+  },
+  {
+    "id": 28,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/22291/StudioFibonacci-Cartoon-monkey.png",
+    "respuesta": {
+      "esp": "Mono",
+      "ing": "Monkey"
+    }
+  },
+  {
+    "id": 29,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/22637/StudioFibonacci-Cartoon-peacock.png",
+    "respuesta": {
+      "esp": "Pavo Real",
+      "ing": "Peacock"
+    }
+  },
+  {
+    "id": 30,
+    "imagen": "https://openclipart.org/image/2400px/svg_to_png/28663/StudioFibonacci-Cartoon-bat.png"
+    "respuesta": {
+      "esp": "Murciélago",
+      "ing": "Bat"
     }
   }
 ]
